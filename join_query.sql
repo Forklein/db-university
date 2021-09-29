@@ -10,9 +10,15 @@ WHERE `degrees`.`name` = "Corso di Laurea in Economia";
 SELECT `degrees`.`name`
 FROM `departments`
 JOIN `degrees`
-ON `departments`.`id` = `degrees`.`department_id`
+ON `departments`.`id` = `degrees`.`department_id`;
 
 --# 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+SELECT `courses`.`name`
+FROM `course_teacher`
+JOIN `courses`
+ON `course_teacher`.`course_id` = `courses`.`id`
+WHERE `teacher_id` = 44;
+
 --# 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 --# 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 --# 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
